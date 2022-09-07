@@ -1,0 +1,162 @@
+@import "variables";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@mixin bg-color($colour, $bor-color) {
+  background-color: $colour;
+  border: 3px solid $bor-color;
+}
+
+@mixin bd-img($value) {
+  background-image: url($value);
+  background-attachment: fixed;
+  background-size: cover;
+}
+%text {
+  background-color: $black;
+  opacity: 0.9;
+  padding: 3px;
+}
+
+%button {
+  color: $white;
+  height: 77px;
+  width: 213px;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  max-width: 1024px;
+
+  margin: auto;
+  justify-content: space-between;
+}
+
+.main {
+  min-height: 100vh;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pg1 {
+  @include bd-img($img1);
+}
+
+.pg2 {
+  @include bd-img($img2);
+}
+
+.pg3 {
+  @include bd-img($img3);
+}
+
+.pg4 {
+  @include bd-img($img4);
+}
+
+.tree-img {
+  max-width: 361px;
+  display: block;
+  margin: 0 auto;
+}
+
+.box {
+  width: auto;
+  text-align: center;
+
+  .btn {
+    font-family: $font;
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+.pg1 .btn {
+  @include bg-color($orange, $darkorange);
+  @extend %button;
+}
+
+.pg2 .btn {
+  @include bg-color($blue, $skyblue);
+  @extend %button;
+}
+
+.pg3 .btn {
+  @include bg-color($green, $leafgreen);
+  @extend %button;
+}
+
+.pg4 .btn {
+  @include bg-color($red, $maroon);
+  @extend %button;
+}
+
+.main:nth-child(even) .container {
+  flex-direction: row-reverse;
+  .box {
+    .btn {
+      margin-right: 0;
+    }
+  }
+}
+
+.header {
+  background-color: $black;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 50px;
+  .navbar {
+    height: 100%;
+  }
+}
+
+.navbar-ul {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navbar-li {
+    list-style: none;
+    padding: 5px;
+
+    .navbar-a {
+      text-decoration: none;
+      color: $white;
+      margin: 20px;
+      font-size: 20px;
+      font-family: $font2;
+    }
+  }
+}
+
+.paragraph {
+  color: $white;
+  width: 500px;
+  text-align: left;
+  align-self: center;
+  .heading {
+    font-size: 50px;
+    font-family: $font;
+    margin-bottom: 25px;
+    line-height: 74px;
+    @extend %text;
+  }
+  .para {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-family: $font2;
+    @extend %text;
+  }
+}
+
+@import "media";

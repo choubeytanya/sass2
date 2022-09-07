@@ -1,0 +1,31 @@
+@media (max-width: 768px) {
+  .navbar-ul {
+    .navbar-li {
+      .navbar-a {
+        margin: 10px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .container {
+    display: block;
+    padding: 15px;
+  }
+  .paragraph {
+    width: auto;
+  }
+  .paragraph .heading,
+  .para {
+    font-size: 20px;
+  }
+  %button {
+    font-size: 15px;
+    height: 70px;
+    width: 160px;
+  }
+  .tree-img {
+    height: 12em;
+    width: 10em;
+  }
+}
